@@ -23,10 +23,10 @@ const Menu = () => {
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                                aria-haspopup="true" aria-expanded="false">MY PROFILE</a>
                             <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="#">Volume Charts</a>
-                                <a class="dropdown-item" href="#">List</a>
+                                <Link to="login" data-toggle="modal" data-target="#myModal" class="dropdown-item"style={{ color: '#000' }}>LOGIN</Link>
+                                <a class="dropdown-item" href="#">MY ORDER</a>
                             </div>
                         </li>
                     </ul>

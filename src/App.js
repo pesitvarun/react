@@ -6,6 +6,7 @@ import CustomerList from './CustomerList';
 import Analytics from './Analytics';
 import Footer from './Footer';
 import Carousel from './Carousel';
+import Login from './Login';
 import { BrowserRouter, Route } from 'react-router-dom';
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Route path="/" exact component={Home} />
         <Route path="/customerlist" component={CustomerList} />
         <Route path="/home" component={Home} />
+        <Route path="/login" component={Login} />
       </div>
     </BrowserRouter>
   );
