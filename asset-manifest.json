@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.css": "/reactrouter/static/css/main.6fa208b6.chunk.css",
-    "main.js": "/reactrouter/static/js/main.0a98e13f.chunk.js",
-    "main.js.map": "/reactrouter/static/js/main.0a98e13f.chunk.js.map",
-    "runtime-main.js": "/reactrouter/static/js/runtime-main.eecdb0e6.js",
-    "runtime-main.js.map": "/reactrouter/static/js/runtime-main.eecdb0e6.js.map",
-    "static/css/2.47e06e2e.chunk.css": "/reactrouter/static/css/2.47e06e2e.chunk.css",
-    "static/js/2.c4292a4c.chunk.js": "/reactrouter/static/js/2.c4292a4c.chunk.js",
-    "static/js/2.c4292a4c.chunk.js.map": "/reactrouter/static/js/2.c4292a4c.chunk.js.map",
-    "index.html": "/reactrouter/index.html",
-    "precache-manifest.577e682fa65ec8992f30bd9c0ae32441.js": "/reactrouter/precache-manifest.577e682fa65ec8992f30bd9c0ae32441.js",
-    "service-worker.js": "/reactrouter/service-worker.js",
-    "static/css/2.47e06e2e.chunk.css.map": "/reactrouter/static/css/2.47e06e2e.chunk.css.map",
-    "static/css/main.6fa208b6.chunk.css.map": "/reactrouter/static/css/main.6fa208b6.chunk.css.map",
-    "static/js/2.c4292a4c.chunk.js.LICENSE.txt": "/reactrouter/static/js/2.c4292a4c.chunk.js.LICENSE.txt",
-    "static/media/homeHandiCraft.jpg": "/reactrouter/static/media/homeHandiCraft.a2d262d4.jpg",
-    "static/media/logo.svg": "/reactrouter/static/media/logo.5d5d9eef.svg"
+    "main.css": "/react/static/css/main.6fa208b6.chunk.css",
+    "main.js": "/react/static/js/main.9a32020c.chunk.js",
+    "main.js.map": "/react/static/js/main.9a32020c.chunk.js.map",
+    "runtime-main.js": "/react/static/js/runtime-main.0439ea0f.js",
+    "runtime-main.js.map": "/react/static/js/runtime-main.0439ea0f.js.map",
+    "static/css/2.47e06e2e.chunk.css": "/react/static/css/2.47e06e2e.chunk.css",
+    "static/js/2.c4292a4c.chunk.js": "/react/static/js/2.c4292a4c.chunk.js",
+    "static/js/2.c4292a4c.chunk.js.map": "/react/static/js/2.c4292a4c.chunk.js.map",
+    "index.html": "/react/index.html",
+    "precache-manifest.828d687acda7223c45677c432ca7b5d0.js": "/react/precache-manifest.828d687acda7223c45677c432ca7b5d0.js",
+    "service-worker.js": "/react/service-worker.js",
+    "static/css/2.47e06e2e.chunk.css.map": "/react/static/css/2.47e06e2e.chunk.css.map",
+    "static/css/main.6fa208b6.chunk.css.map": "/react/static/css/main.6fa208b6.chunk.css.map",
+    "static/js/2.c4292a4c.chunk.js.LICENSE.txt": "/react/static/js/2.c4292a4c.chunk.js.LICENSE.txt",
+    "static/media/homeHandiCraft.jpg": "/react/static/media/homeHandiCraft.a2d262d4.jpg",
+    "static/media/logo.svg": "/react/static/media/logo.5d5d9eef.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.eecdb0e6.js",
+    "static/js/runtime-main.0439ea0f.js",
     "static/css/2.47e06e2e.chunk.css",
     "static/js/2.c4292a4c.chunk.js",
     "static/css/main.6fa208b6.chunk.css",
-    "static/js/main.0a98e13f.chunk.js"
+    "static/js/main.9a32020c.chunk.js"
   ]
 }
