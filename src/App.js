@@ -7,6 +7,7 @@ import Analytics from './Analytics';
 import Footer from './Footer';
 import Carousel from './Carousel';
 import Login from './Login';
+import Test from './Test';
 import { BrowserRouter, Route } from 'react-router-dom';
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route path="/customerlist" component={CustomerList} />
         <Route path="/home" component={Home} />
         <Route path="/login" component={Login} />
+        <Route path="/test" component={Test} />
       </div>
     </BrowserRouter>
   );

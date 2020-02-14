@@ -21,6 +21,9 @@ const Menu = () => {
                         <li class="nav-item" style={{ padding: '8px' }}>
                             <Link to="customerlist" className="linkStyle" style={{ color: '#fff' }}>CustomerList</Link>
                         </li>
+                        <li class="nav-item" style={{ padding: '8px' }}>
+                            <Link to="Test" className="linkStyle" style={{ color: '#fff' }}>Test</Link>
+                        </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
                                 aria-haspopup="true" aria-expanded="false">MY PROFILE</a>
