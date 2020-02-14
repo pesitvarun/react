@@ -9,6 +9,7 @@ import Carousel from './Carousel';
 import Login from './Login';
 import Test from './Test';
 import { BrowserRouter, Route } from 'react-router-dom';
+import {withRouter} from 'react-router';
 
 function App() {
   return (
