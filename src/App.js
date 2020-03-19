@@ -9,11 +9,12 @@ import Carousel from './Carousel';
 import Login from './Login';
 import Test from './Test';
 import { BrowserRouter, Route } from 'react-router-dom';
+import { HashRouter } from "react-router-dom";
 import {withRouter} from 'react-router';
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <div className="App">
         <Menu />
         <Route path="/analytics" component={Analytics} />
@@ -23,7 +24,7 @@ function App() {
         <Route path="/login" component={Login} />
         <Route path="/test" component={Test} />
       </div>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 const Home = () => {
