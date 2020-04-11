@@ -6,232 +6,159 @@ const Test = () => {
     $(document).ready(function () {
         const canvas = new fabric.Canvas('canvas');
         $("#imageUpload").change(function (e) {
-            var file = e.target.files[0];
-            var reader = new FileReader();
-            console.log("reader   " + reader);
+            const file = e.target.files[0];
+            const reader = new FileReader();
             reader.onload = function (f) {
                 let data = f.target.result;
                 fabric.Image.fromURL(data, function (img) {
-                    let scale = 100 / img.width;
-                    img.set({
-                        scaleX: scale,
-                        scaleY: scale
-                    });
+                    img.scale(.3);
                     canvas.add(img);
                 });
             };
             reader.readAsDataURL(file);
-            debugger;
         });
-
+       
         $("#addText").click(function () {
-            var oText = new fabric.IText('Tap and Type', {
+            let oText = new fabric.IText('Tap and Type', {
                 left: 100,
                 top: 100,
-            });
+            });            
             canvas.add(oText);
             canvas.setActiveObject(oText);
-            $('#fill, #font').trigger('change');
+            // oText.fillStyle="red";
+            // $('#fill, #font').trigger('change');
+           // oText.set('fill', 'red');
             oText.bringToFront();
-        })
-
-     
-        $('#fill').change(function () {
-            alert("1");
+        });
+        $('#changeColor').change(function (e) {                
             var obj = canvas.getActiveObject();
             if (obj) {
-                obj.setFill($(this).val());
+                 obj.set('fill', $(this).val());
+            }
+            canvas.renderAll();
+        });        
+        $('#font').change(function () {          
+            let obj = canvas.getActiveObject();
+            if (obj) {
+                obj.set('fontFamily',$(this).val());               
             }
             canvas.renderAll();
         });
-
-        $('#font').change(function () {
-            var obj = canvas.getActiveObject();
-            if (obj) {
-                obj.setFontFamily($(this).val());
-            }
-            canvas.renderAll();
-        });
-      
-      
-        //document.querySelector('#txt').onclick = function (e) {
-        $("#txt").click(function (e) {
-            e.preventDefault();
-            setTimeout(function () {
-                canvas1()
-            }, 1000);
-            setTimeout(function () {
-                canvas2()
-            }, 2000);
-            setTimeout(function () {
-                canvas3()
-            }, 3000);
-           
-         
-            // canvas.discardActiveObject();
-            canvas.renderAll();
-            const b =canvas.toDataURL()
-            console.log("image--->", canvas.toDataURL());
-            console.log("--000--", b);
-            //document.querySelector('#preview').src = canvas.toDataURL();
-            $("#preview").attr("src", canvas.toDataURL());
-            debugger;
-            function canvas1() {
-             
-                var canvas = document.getElementById("canvas1");
-                var ctx = canvas.getContext("2d");
-    
-                var productImg = new Image();
-                productImg.onload = function () {
-                    var iw = productImg.width;
-                    var ih = productImg.height;
-                    console.log("height");
-                    debugger;
-                    canvas.width = iw;
-                    canvas.height = ih;
-                    debugger;
-                    ctx.drawImage(productImg, 0, 0, productImg.width, productImg.height,
-                        0, 0, iw, ih);
-                    
-                    loadUpperIMage()
-                };
-    
-                productImg.src = "http://res.cloudinary.com/pussyhunter/image/upload/c_scale,f_auto,h_350/left_handle_cup_i7ztfs.jpg"
-    
-    
-                function loadUpperIMage() {
-                    var img = new Image();   
-                  
-                    img.src = b;
-                 
-                    img.onload = function () {
-    
-                        var iw = img.width;
-                        var ih = img.height;
-    
-                        var xOffset = 102, //left padding
-                            yOffset = 110; //top padding
-    
-                        //                 //alert(ih)
-                        var a = 75.0; //image width
-                        var b = 10; //round ness
-    
-                        var scaleFactor = iw / (4 * a);
-    
-                        //                 // draw vertical slices
-                        for (var X = 0; X < iw; X += 1) {
-                            var y = b / a * Math.sqrt(a * a - (X - a) * (X - a)); // ellipsis equation
-                            ctx.drawImage(img, X * scaleFactor, 0, iw / 9, ih, X + xOffset, y + yOffset, 1, 174);
-                        }
-                    };
-                }
-    
-            };
         
-        
-        function canvas2() {
-
-            var canvas = document.getElementById("canvas2");
+        function canvasLeft(collargeImage) {
+            var canvas = document.getElementById("canvasLeft");
             var ctx = canvas.getContext("2d");
-
             var productImg = new Image();
+            productImg.src = "http://res.cloudinary.com/pussyhunter/image/upload/c_scale,f_auto,h_350/left_handle_cup_i7ztfs.jpg"
             productImg.onload = function () {
-                var iw = productImg.width;
-                var ih = productImg.height;
-                console.log("height");
-
+                let iw = productImg.width;
+                let ih = productImg.height;
                 canvas.width = iw;
                 canvas.height = ih;
-
                 ctx.drawImage(productImg, 0, 0, productImg.width, productImg.height,
                     0, 0, iw, ih);
-                loadUpperIMage()
-            };
 
-
-            productImg.src = "http://res.cloudinary.com/pussyhunter/image/upload/h_350/canter_handle_cup_xyxhdd.jpg"
-
-            function loadUpperIMage() {
-                var img = new Image();
-
-                img.src = b;
-
+                let img = new Image();
+                img.src = collargeImage;
                 img.onload = function () {
-
                     var iw = img.width;
                     var ih = img.height;
-
-                    // alert(iw)
-
-                    var xOffset = 101, //left padding
+                    var xOffset = 102, //left padding
                         yOffset = 110; //top padding
 
                     var a = 75.0; //image width
                     var b = 10; //round ness
+                    var scaleFactor = iw / (4 * a);
 
+                    // draw vertical slices
+                    for (var X = 0; X < iw; X += 1) {
+                        var y = b / a * Math.sqrt(a * a - (X - a) * (X - a)); // ellipsis equation
+                        ctx.drawImage(img, X * scaleFactor, 0, iw / 9, ih, X + xOffset, y + yOffset, 1, 174);
+                    }
+                    console.log("-----1>", img);
+                };
+            };
+        };
+        function canvasMiddle(collargeImage) {
+            var canvas = document.getElementById("canvasMiddle");
+            var ctx = canvas.getContext("2d");
+            var productImg = new Image();
+            productImg.src = "http://res.cloudinary.com/pussyhunter/image/upload/h_350/canter_handle_cup_xyxhdd.jpg"
+            productImg.onload = function () {
+                let iw = productImg.width;
+                let ih = productImg.height;
+                canvas.width = iw;
+                canvas.height = ih;
+                ctx.drawImage(productImg, 0, 0, productImg.width, productImg.height,
+                    0, 0, iw, ih);
+
+                let img = new Image();
+                img.src = collargeImage;
+                img.onload = function () {
+                    var iw = img.width;
+                    var ih = img.height;
+                    var xOffset = 102, //left padding
+                        yOffset = 110; //top padding
+
+                    var a = 75.0; //image width
+                    var b = 10; //round ness
                     var scaleFactor = iw / (4 * a);
 
                     // draw vertical slices
                     for (var X = 0; X < iw; X += 1) {
                         var y = b / a * Math.sqrt(a * a - (X - a) * (X - a)); // ellipsis equation
                         ctx.drawImage(img, X * scaleFactor, 0, iw / 3, ih, X + xOffset, y + yOffset, 1, 174);
-
                     }
+                   
                 };
-            }
-
+            };
         };
 
-        function canvas3() {
-
-            var canvas = document.getElementById("canvas3");
+        function canvasRight(collargeImage) {
+            var canvas = document.getElementById("canvasRight");
             var ctx = canvas.getContext("2d");
-
             var productImg = new Image();
+            productImg.src = "http://res.cloudinary.com/pussyhunter/image/upload/h_350/right_handle_cup_dsdhr7.jpg"
             productImg.onload = function () {
-                var iw = productImg.width;
-                var ih = productImg.height;
-
+                let iw = productImg.width;
+                let ih = productImg.height;
                 canvas.width = iw;
                 canvas.height = ih;
-
                 ctx.drawImage(productImg, 0, 0, productImg.width, productImg.height,
                     0, 0, iw, ih);
-                loadUpperIMage()
-            };
 
-            productImg.src = "http://res.cloudinary.com/pussyhunter/image/upload/h_350/right_handle_cup_dsdhr7.jpg"
-
-
-            function loadUpperIMage() {
-                var img = new Image();
-
-                img.src = b;
+                let img = new Image();
+                img.src = collargeImage;
                 img.onload = function () {
-
                     var iw = img.width;
                     var ih = img.height;
-
-                    //alert(iw)
-
                     var xOffset = 102, //left padding
                         yOffset = 110; //top padding
 
                     var a = 75.0; //image width
                     var b = 10; //round ness
+                    var scaleFactor = iw / (4 * a);
 
-                    var scaleFactor = iw / (3 * a);
-
-                    //                 // draw vertical slices
+                    // draw vertical slices
                     for (var X = 0; X < iw; X += 1) {
                         var y = b / a * Math.sqrt(a * a - (X - a) * (X - a)); // ellipsis equation
                         ctx.drawImage(img, X * scaleFactor, 0, iw / 1.5, ih, X + xOffset, y + yOffset, 1, 174);
                     }
+                    console.log("-----1>", img);
                 };
-            }
-
+            };
         };
-    });
+        //document.querySelector('#txt').onclick = function (e) {
+        $("#txt").click(function (e) {
+            e.preventDefault();
+             canvas.discardActiveObject();
+            const collargeImage = canvas.toDataURL();
+            canvasLeft(collargeImage);
+            canvasMiddle(collargeImage);
+            canvasRight(collargeImage);
+        
+            canvas.renderAll();
+        });
         function updateItems(delta) {
             var $items = $('#group').children();
             var $current = $items.filter('.current');
@@ -255,68 +182,6 @@ const Test = () => {
         updateItems(0);
     });
 
-
-    // Listen for changes in UI
-    // $('#tint').change(function () {
-    //     // Get the selected colour
-    //     var tintHex = $('#fillimage').val();
-
-    //     if ($(this).is(':checked') === true) {
-    //         applyTint(tintHex);
-    //     } else {
-    //         removeTint();
-    //     }
-    // });
-
-
-    // function applyTint(tintHex) {
-    //     // Get active object
-    //     var object = canvas.getActiveObject();
-
-    //     if (!object) {
-    //         console.error('No image selected');
-    //         return false;
-    //         // Could prompt the user to select an image, or programmatically do it for them
-    //     }
-
-    //     // Apply the tint. Based on docs at: http://fabricjs.com/docs/fabric.Image.filters.Tint.html#initialize
-    //     var tintFilter = new fabric.Image.filters.Tint({
-    //         color: tintHex,
-    //         //opacity: 0.5 // Could also pass in an opacity value
-    //     });
-    //     object.filters.push(tintFilter);
-    //     object.applyFilters(canvas.renderAll.bind(canvas));
-    // }
-
-
-    // function removeTint() {
-    //     // Get active object
-    //     var object = canvas.getActiveObject();
-
-    //     if (!object) {
-    //         console.error('No image selected');
-    //         return false;
-    //         // Could prompt the user to select an image, or programmatically do it for them
-    //     }
-
-    //     object.filters = []; // Empty filters array
-    //     object.applyFilters(canvas.renderAll.bind(canvas));
-    // }
-
-
-
-
-
-
-
-
-    // });
-
-
-
-
-
-
     return (
         <div>
 
@@ -334,40 +199,27 @@ const Test = () => {
                                 <div className="col-lg-12">
                                     <input className="btn btn-primary" type="file" id="imageUpload" />
                                 </div>
-                                {/* <div className="col-lg-6">
-                                    <input type="color" value="blue" id="fill" />
-                                </div>
-                                <div className="col-lg-6">
-                                    <input className="btn btn-primary" type="checkbox" id="tint" /> Tint:
-                            <input type="color" value="blue" id="fillimage" />
-                                </div> */}
-                                {/* <div className="col-lg-6">
+                                <div className="col-lg-12">
+                                    <input type="color" id="changeColor" />
+                                </div>                                
+                                <div className="col-lg-12">
                                     <select id="font">
                                         <option>arial</option>
+                                        <option>Courier New</option>
+                                        <option>Comic Sans MS</option>
                                         <option>tahoma</option>
                                         <option>times new roman</option>
+                                        <option>sans-serif</option>
                                     </select>
-                                </div>
-                              
-                                <div className="col-lg-6">
-                                    <input className="btn btn-primary" type="button" value="Clear Canvas" id="clear" />
-                                </div>
-                                <div className="col-lg-6">
-                                    <input className="btn btn-primary" type="button" value="Reset" id="Reset" />
-                                </div>
-                                <div className="col-lg-6">
+                                </div>                              
+                                
+                                {/* <div className="col-lg-12">
                                     <input className="btn btn-primary" type="button" id="saveImg" value="Save Image" />
                                 </div> */}
-                                <div className="col-lg-6">
+                                <div className="col-lg-12">
                                     <button className="btn btn-primary" id="addText">Add Custom Text</button>
                                 </div>
-                                {/* <div className="col-lg-6">
-                                    <select id="font">
-                                        <option>arial</option>
-                                        <option>tahoma</option>
-                                        <option>times new roman</option>
-                                    </select>
-                                </div> */}
+                             
                             </div>
                         </div>
                     </div>
@@ -389,15 +241,15 @@ const Test = () => {
                                         <div className="col-lg-7">
                                             <div id="group">
                                                 <div>
-                                                    <canvas id="canvas1"></canvas>
+                                                    <canvas id="canvasLeft"></canvas>
                                                 </div>
 
                                                 <div>
-                                                    <canvas id="canvas2"></canvas>
+                                                    <canvas id="canvasMiddle"></canvas>
                                                 </div>
 
                                                 <div>
-                                                    <canvas id="canvas3"></canvas>
+                                                    <canvas id="canvasRight"></canvas>
                                                 </div>
                                             </div>
                                         </div>
