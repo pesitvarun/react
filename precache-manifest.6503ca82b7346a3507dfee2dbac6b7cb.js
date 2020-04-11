@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "a13f1869d5c486019925",
+    "revision": "918029fd237643bbdf5d",
     "url": "/react/static/css/main.28207211.chunk.css"
   },
   {
-    "revision": "a13f1869d5c486019925",
-    "url": "/react/static/js/main.adc991d1.chunk.js"
+    "revision": "918029fd237643bbdf5d",
+    "url": "/react/static/js/main.69d22042.chunk.js"
   },
   {
     "revision": "4e6a4b677d1c1e6ba359",
@@ -28,7 +28,7 @@ self.__precacheManifest = [
     "url": "/react/static/media/homeHandiCraft.a2d262d4.jpg"
   },
   {
-    "revision": "6d572bfeb1757327a7e99156e60f6d54",
+    "revision": "71130cb978042c89373fc28ec899a401",
     "url": "/react/index.html"
   }
 ];
