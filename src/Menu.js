@@ -5,7 +5,7 @@ const Menu = () => {
     return (
         <div>
             <nav className="navbar navbar-expand-lg navbar-dark primary-color">
-                <a className="navbar-brand" href="#">Navbar</a>
+                <a className="navbar-brand" href="#">LOGO</a>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
                     aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
@@ -22,16 +22,8 @@ const Menu = () => {
                             <Link to="customerlist" className="linkStyle" style={{ color: '#fff' }}>CustomerList</Link>
                         </li>
                         <li className="nav-item" style={{ padding: '8px' }}>
-                            <Link to="Test" className="linkStyle" style={{ color: '#fff' }}>Test</Link>
-                        </li>
-                        <li className="nav-item dropdown">
-                            <a className="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false">MY PROFILE</a>
-                            <div className="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-                                <Link to="login" data-toggle="modal" data-target="#myModal" className="dropdown-item"style={{ color: '#000' }}>LOGIN</Link>
-                                <a className="dropdown-item" href="#">MY ORDER</a>
-                            </div>
-                        </li>
+                            <Link to="Customizeproduct" className="linkStyle" style={{ color: '#fff' }}>Customize Product</Link>
+                        </li>                       
                     </ul>
                     <form className="form-inline">
                         <div className="md-form my-0">

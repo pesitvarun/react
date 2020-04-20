@@ -7,9 +7,12 @@ import Analytics from './Analytics';
 import Footer from './Footer';
 import Carousel from './Carousel';
 import Login from './Login';
-import Test from './Test';
+import Customizeproduct from './Customizeproduct';
+import HandicraftProducts from './HandicraftProducts';
+import FlowerCategory from "./FlowerCategory";
 import { BrowserRouter, Route } from 'react-router-dom';
 import { HashRouter } from "react-router-dom";
+
 import {withRouter} from 'react-router';
 
 function App() {
@@ -22,7 +25,9 @@ function App() {
         <Route path="/customerlist" component={CustomerList} />
         <Route path="/home" component={Home} />
         <Route path="/login" component={Login} />
-        <Route path="/test" component={Test} />
+        <Route path="/Customizeproduct" component={Customizeproduct} />
+        <Route path="/HandicraftProducts" component={HandicraftProducts} />        
+        <Route path="/FlowerCategory" component={FlowerCategory} />
       </div>
     </HashRouter>
   );
