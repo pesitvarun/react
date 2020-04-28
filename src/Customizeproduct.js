@@ -1,8 +1,12 @@
 import React from 'react';
 import { fabric } from 'fabric';
 import $ from 'jquery';
+import { Link } from 'react-router-dom';
 import './test.css';
 const Customizeproduct = () => {
+    var leftSideMug = require('./assets/img/left_handle_cup.jpg');
+    var centerSideMug = require('./assets/img/canter_handle_cup.jpg');
+    var rightSideMug = require('./assets/img/right_handle_cup.jpg');
     $(document).ready(function () {
         const canvas = new fabric.Canvas('canvas');
         $("#imageUpload").change(function (e) {
@@ -49,7 +53,7 @@ const Customizeproduct = () => {
             var canvas = document.getElementById("canvasLeft");
             var ctx = canvas.getContext("2d");
             var productImg = new Image();
-            productImg.src = "http://res.cloudinary.com/pussyhunter/image/upload/c_scale,f_auto,h_350/left_handle_cup_i7ztfs.jpg"
+            productImg.src = leftSideMug
             productImg.onload = function () {
                 let iw = productImg.width;
                 let ih = productImg.height;
@@ -83,7 +87,7 @@ const Customizeproduct = () => {
             var canvas = document.getElementById("canvasMiddle");
             var ctx = canvas.getContext("2d");
             var productImg = new Image();
-            productImg.src = "http://res.cloudinary.com/pussyhunter/image/upload/h_350/canter_handle_cup_xyxhdd.jpg"
+            productImg.src = centerSideMug
             productImg.onload = function () {
                 let iw = productImg.width;
                 let ih = productImg.height;
@@ -118,7 +122,7 @@ const Customizeproduct = () => {
             var canvas = document.getElementById("canvasRight");
             var ctx = canvas.getContext("2d");
             var productImg = new Image();
-            productImg.src = "http://res.cloudinary.com/pussyhunter/image/upload/h_350/right_handle_cup_dsdhr7.jpg"
+            productImg.src = rightSideMug
             productImg.onload = function () {
                 let iw = productImg.width;
                 let ih = productImg.height;
@@ -257,7 +261,7 @@ const Customizeproduct = () => {
                                 </div>
                                 <div className="modal-footer">
                                     <button type="button" className="btn btn-default" data-dismiss="modal">Close</button>
-                                    <button type="button" className="btn btn-danger">Order Now</button>
+                                   <Link to="productCart" type="button" className="btn btn-danger">Order Now</Link>
                                 </div>
                             </div>
 

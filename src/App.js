@@ -7,13 +7,14 @@ import Analytics from './Analytics';
 import Footer from './Footer';
 import Carousel from './Carousel';
 import Login from './Login';
+import productCart from './productCart';
 import Customizeproduct from './Customizeproduct';
 import HandicraftProducts from './HandicraftProducts';
 import FlowerCategory from "./FlowerCategory";
 import { BrowserRouter, Route } from 'react-router-dom';
 import { HashRouter } from "react-router-dom";
 
-import {withRouter} from 'react-router';
+import { withRouter } from 'react-router';
 
 function App() {
   return (
@@ -26,8 +27,9 @@ function App() {
         <Route path="/home" component={Home} />
         <Route path="/login" component={Login} />
         <Route path="/Customizeproduct" component={Customizeproduct} />
-        <Route path="/HandicraftProducts" component={HandicraftProducts} />        
+        <Route path="/HandicraftProducts" component={HandicraftProducts} />
         <Route path="/FlowerCategory" component={FlowerCategory} />
+        <Route path="/productCart" component={productCart} />
       </div>
     </HashRouter>
   );

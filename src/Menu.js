@@ -2,10 +2,11 @@ import React from 'react';
 import './Menustyle.css';
 import { Link } from 'react-router-dom';
 const Menu = () => {
+    var logo = require('./assets/img/logo.png');
     return (
         <div>
             <nav className="navbar navbar-expand-lg navbar-dark primary-color">
-                <a className="navbar-brand" href="#">LOGO</a>
+                <a className="navbar-brand" href="#"><img src={logo} width="120"/></a>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
                     aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
